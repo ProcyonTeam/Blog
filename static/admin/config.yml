@@ -24,7 +24,16 @@ collections:
           required: false,
         }
       - { label: '本文', name: 'body', widget: 'markdown', required: false }
-  - name: 'Member'
+      - {
+          label: '投稿者',
+          name: 'contributor',
+          widget: 'relation',
+          collection: 'members',
+          searchFields: ['name'],
+          valueField: 'name',
+          displayFields: ['name'],
+        }
+  - name: 'members'
     label: 'メンバー'
     folder: 'content/members'
     create: true
