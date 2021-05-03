@@ -26,7 +26,7 @@ collections:
       - { label: '本文', name: 'body', widget: 'markdown', required: false }
   - name: 'Member'
     label: 'メンバー'
-    folder: 'content/articles'
+    folder: 'content/members'
     create: true
     format: 'frontmatter'
     slug: '{{slug}}'
