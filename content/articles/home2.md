@@ -4,6 +4,7 @@ description: Learn how to use @nuxt/content.
 tags:
   - テスト1
   - テスト2
+contributor: いなりずし
 ---
 
 ## はじめに
