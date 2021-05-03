@@ -31,7 +31,6 @@ collections:
           collection: 'members',
           searchFields: ['name'],
           valueField: 'name',
-          displayFields: ['name'],
         }
   - name: 'members'
     label: 'メンバー'
