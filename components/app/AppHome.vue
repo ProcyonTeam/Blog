@@ -5,10 +5,9 @@
     >
       <div>
         <!-- eslint-disable vue/no-v-html -->
-        <h2
-          class="text-3xl font-semibold text-gray-800 md:text-4xl"
-          v-html="info.home.title"
-        ></h2>
+        <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl">
+          僕らは抵抗するで<span class="text-indigo-600">技術で</span>
+        </h2>
         <!-- eslint-enable -->
         <p class="mt-2 text-sm text-gray-500 md:text-base">
           {{ info.home.text }}

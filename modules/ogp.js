@@ -18,7 +18,7 @@ class OgpGenerator {
       attributes: { fill: 'white', stroke: 'white' },
     }
     this.compositeOption = {
-      margin: 30,
+      margin: 60,
     }
   }
 
