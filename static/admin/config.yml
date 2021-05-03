@@ -2,18 +2,19 @@ backend:
 	  name: git-gateway
 	  branch: main
 
-	locale: 'ja'
-	media_folder: static/images
-	public_folder: /images
-  show_preview_links: false
-  collections:
-	  - name: 'Blog'
-	    label: 'ブログ'
-	    create: "true"
-      folder: 'content/articles'
-      format: 'frontmatter'
-      slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-      fields:
-      - { label: 'タイトル', name: 'title', widget: 'string', required: true }
-      - { label: '詳細', name: 'description', widget: 'string', required: false }
-      - { label: '記事', name: 'body', widget: 'markdown', required: false }
+locale: 'ja'
+media_folder: static/images
+public_folder: /images
+show_preview_links: false
+
+collections:
+	- name: 'Blog'
+	  label: 'ブログ'
+	  create: "true"
+    folder: 'content/articles'
+    format: 'frontmatter'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+    - { label: 'タイトル', name: 'title', widget: 'string', required: true }
+    - { label: '詳細', name: 'description', widget: 'string', required: false }
+    - { label: '記事', name: 'body', widget: 'markdown', required: false }
