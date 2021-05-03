@@ -5,7 +5,9 @@
         <SideItem>
           <article class="m-4 lg:m-2">
             <section>
-              <h1 class="text-4xl font-bold">{{ article.title }}</h1>
+              <h1 class="text-4xl font-bold">
+                僕らは抵抗するで<span class="text-indigo-600">技術で</span>
+              </h1>
               <div class="m-2">
                 <fa icon="history" class="mr-2" />{{ getData }}
               </div>

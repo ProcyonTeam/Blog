@@ -26,6 +26,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
     '@nuxtjs/fontawesome',
+    '@/modules/ogp.js',
   ],
 
   modules: ['@nuxt/content'],

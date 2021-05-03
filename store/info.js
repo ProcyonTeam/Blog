@@ -5,7 +5,7 @@ export const state = () => ({
     { text: 'Blog', to: '/articles' },
   ],
   home: {
-    title: '僕らは抵抗するで<span class="text-blue-700">技術で</span>',
+    title: '僕らは抵抗するで<span class="text-indigo-600">技術で</span>',
     text: `好きなもの作り続ければ自ずと道が見える...
   かもしれない。不透明な未来では明日のことも分からない。
   けどせめて自分の技術は信じたい。`,
