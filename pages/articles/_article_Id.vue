@@ -21,6 +21,16 @@
       </div>
       <div class="hidden md:w-1/3 lg:w-1/4 md:block">
         <div class="sticky top-0">
+          <SideItem v-if="member" class="">
+            <h2 class="text-2xl border-b-2 p-1">投稿者</h2>
+            <section class="flex items-center m-2">
+              <nuxt-img :src="member.icon" class="rounded-full h-16 border-2" />
+              <div class="">
+                <h2 class="text-xl font-semibold pl-2">{{ member.name }}</h2>
+                <p class="pl-3 text-sm">{{ member.appeal }}</p>
+              </div>
+            </section>
+          </SideItem>
           <AppTableOfContents :article="article" />
         </div>
       </div>
@@ -33,8 +43,12 @@ export default {
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.article_Id).fetch()
 
+    const member = (await $content('members').fetch()).find(
+      (mem) => mem.name === article.contributor
+    )
     return {
       article,
+      member,
     }
   },
   computed: {

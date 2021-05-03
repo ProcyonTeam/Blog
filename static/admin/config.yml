@@ -47,4 +47,6 @@ collections:
           widget: 'file',
           default: '/images/inarizushi.jpg',
         }
-      - { label: '紹介', name: 'text', widget: 'string', required: false }
+      - { label: '紹介', name: 'appeal', widget: 'string', required: false }
+      - { label: 'GitHub', name: 'github', widget: 'string', required: false }
+      - { label: 'Twitter', name: 'twitter', widget: 'string', required: false }
