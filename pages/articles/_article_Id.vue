@@ -4,7 +4,7 @@
       <div class="w-full md:w-2/3 lg:w-3/4">
         <SideItem>
           <article class="m-4 lg:m-2">
-            <section>
+            <section class="pb-4">
               <h1 class="text-4xl font-bold">{{ article.title }}</h1>
               <div class="m-2">
                 <fa icon="history" class="mr-2" />{{ getData }}
@@ -13,6 +13,7 @@
                 <fa icon="tags" class="mr-2" />
                 <Tags v-for="tag of article.tags" :key="tag">{{ tag }}</Tags>
               </div>
+              <nuxt-img :src="`/images/${article.ogpImageName}`" />
             </section>
 
             <NuxtContent class="prose-lg" :document="article" />
