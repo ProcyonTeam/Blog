@@ -4,8 +4,8 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const articles = await $content('articles').fetch()
-    console.log(articles)
+    const articles = await $content('articles').only(['title']).fetch()
+
     return {
       articles,
     }
