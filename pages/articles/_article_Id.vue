@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <div class="md:flex lg:max-w-3/4 m-auto bg-gray-100">
+  <main class="bg-gray-100">
+    <div class="md:flex xl:w-3/4 m-auto">
       <div class="w-full md:w-2/3 lg:w-3/4">
         <SideItem>
           <article class="m-4 lg:m-2">
@@ -18,24 +18,47 @@
 
             <NuxtContent class="prose-lg" :document="article" />
           </article>
+          <div
+            v-if="prev || next"
+            class="grid grid-cols-2 gap-2 text-xl font-bold lg:px-8 p-4 border-t dark:border-gray-800"
+          >
+            <NuxtLink
+              v-if="prev"
+              :to="`/articles/${prev.slug}`"
+              class="hover:underline flex items-center justify-start"
+            >
+              <fa icon="arrow-left" />
+              <span class="truncate">{{ prev.title }}</span>
+            </NuxtLink>
+
+            <NuxtLink
+              v-if="next"
+              :to="`/articles/${next.slug}`"
+              class="hover:underline flex items-center justify-end"
+            >
+              <span class="truncate">{{ next.title }}</span>
+              <fa icon="arrow-right" />
+            </NuxtLink>
+          </div>
         </SideItem>
       </div>
-      <div class="hidden md:w-1/3 lg:w-1/4 md:block">
-        <div class="sticky top-0">
-          <SideItem v-if="member" class="">
-            <h2 class="text-2xl border-b-2 p-1">投稿者</h2>
-            <section class="flex items-center m-2">
-              <nuxt-img :src="member.icon" class="rounded-full h-16 border-2" />
-              <div class="">
-                <h2 class="text-xl font-semibold pl-2">{{ member.name }}</h2>
-                <p class="pl-3 text-sm">{{ member.appeal }}</p>
-              </div>
-            </section>
-          </SideItem>
+      <div
+        class="fixed top-0 right-0 border-2 w-full sm:w-2/3 md:w-1/3 lg:w-1/4 md:block md:static md:border-0"
+        :class="{ block: openSideMenu, hidden: !openSideMenu }"
+      >
+        <div class="md:sticky md:top-0">
+          <AppMember v-if="member" :member="member" />
           <AppTableOfContents :article="article" />
         </div>
       </div>
     </div>
+    <button
+      class="md:hidden bg-white fixed rounded-full h-16 w-16 bottom-10 right-10 border-2 flex items-center justify-center"
+      @click="openSideMenu = !openSideMenu"
+    >
+      <fa v-if="openSideMenu" icon="times" class="leading-10 text-3xl" />
+      <fa v-else icon="bars" class="leading-10 text-3xl" />
+    </button>
   </main>
 </template>
 
@@ -47,11 +70,23 @@ export default {
     const member = (await $content('members').fetch()).find(
       (mem) => mem.name === article.contributor
     )
+
+    const [prev, next] = await $content('articles')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.article_Id)
+      .fetch()
+
     return {
       article,
       member,
+      prev,
+      next,
     }
   },
+  data: () => ({
+    openSideMenu: false,
+  }),
   computed: {
     getData() {
       const date = new Date(this.article.updatedAt)

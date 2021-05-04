@@ -32,6 +32,7 @@ collections:
           searchFields: ['name'],
           valueField: 'name',
         }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: ['タグなし'] }
   - name: 'members'
     label: 'メンバー'
     folder: 'content/members'

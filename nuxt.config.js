@@ -41,9 +41,16 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faTags', 'faHistory'],
+      solid: [
+        'faTags',
+        'faHistory',
+        'faBars',
+        'faTimes',
+        'faArrowRight',
+        'faArrowLeft',
+      ],
       regular: [],
-      brands: [],
+      brands: ['faGithub', 'faTwitter'],
     },
   },
   build: {},
