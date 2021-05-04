@@ -43,7 +43,7 @@
         </SideItem>
       </div>
       <div
-        class="fixed top-0 right-0 border-2 w-full sm:w-2/3 md:w-1/3 lg:w-1/4 md:block md:static md:border-0"
+        class="fixed h-full bg-white top-0 right-0 border-2 w-full sm:w-2/3 md:w-1/3 lg:w-1/4 md:block md:static md:h-auto md:bg-gray-100 md:border-0"
         :class="{ block: openSideMenu, hidden: !openSideMenu }"
       >
         <div class="md:sticky md:top-0">
