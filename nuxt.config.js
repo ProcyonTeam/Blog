@@ -15,7 +15,7 @@ export default {
         content: 'プロキオン',
       },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: baseUrl },
+      { hid: 'og:url', property: 'og:url', content: process.env.BASE_URL },
       { hid: 'og:title', property: 'og:title', content: 'プロキオン' },
       {
         hid: 'og:description',
