@@ -48,6 +48,7 @@ export default {
         'faTimes',
         'faArrowRight',
         'faArrowLeft',
+        'faSearch',
       ],
       regular: [],
       brands: ['faGithub', 'faTwitter'],

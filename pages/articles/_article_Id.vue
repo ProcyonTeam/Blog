@@ -47,6 +47,7 @@
         :class="{ block: openSideMenu, hidden: !openSideMenu }"
       >
         <div class="md:sticky md:top-0">
+          <AppSearch class="m-4" />
           <AppMember v-if="member" :member="member" />
           <AppTableOfContents :article="article" />
         </div>
