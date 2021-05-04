@@ -51,7 +51,7 @@ export default {
     '@/modules/ogp.js',
   ],
 
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxtjs/pwa'],
 
   content: {
     markdown: {
@@ -78,6 +78,17 @@ export default {
   },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || 'http://locahost:3000',
+  },
+  manifest: {
+    name: 'プロキオン',
+    lang: 'ja',
+    short_name: 'TeamP',
+    title: 'プロキオン',
+    'og:title': 'プロキオン',
+    description: 'プロキオンの日常とか開発とか',
+    'og:description': 'プロキオンの日常とか開発とか',
+    theme_color: '#fff',
+    background_color: '#fff',
   },
   build: {},
 }

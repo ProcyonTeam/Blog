@@ -102,7 +102,7 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `${this.article.descriptions}...`,
+          content: `${this.article.descriptions || ''}...`,
         },
         {
           hid: 'og:url',

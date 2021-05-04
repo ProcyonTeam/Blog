@@ -1,5 +1,5 @@
 <template>
-  <main class="md:flex bg-gray-100">
+  <main class="md:flex">
     <div class="flex flex-wrap w-full md:w-2/3 lg:w-3/4">
       <PostCard
         v-for="article in articles"
@@ -9,7 +9,7 @@
     </div>
 
     <div
-      class="fixed h-full bg-white top-0 right-0 border-2 w-full sm:w-2/3 md:w-1/3 lg:w-1/4 md:block md:static md:h-auto md:bg-gray-100 md:border-0"
+      class="fixed h-full bg-white top-0 right-0 border-2 w-full sm:w-2/3 md:w-1/3 lg:w-1/4 md:block md:static md:h-auto md:border-0 md:border-t-2"
       :class="{ block: openSideMenu, hidden: !openSideMenu }"
     >
       <div class="md:sticky md:top-0">
