@@ -25,7 +25,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: `${this.$config.baseURL}/ogp.png`,
+        content: `${process.env.BASE_URL}/ogp.png`,
       },
       {
         hid: 'twitter:card',
