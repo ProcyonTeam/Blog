@@ -25,4 +25,7 @@
     /* Make pre static so the relative goes to the parent (.nuxt-content-highlight) */
     @apply bg-gray-800 static;
   }
+  a {
+    word-break: break-all;
+  }
 }
