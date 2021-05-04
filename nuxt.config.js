@@ -2,14 +2,36 @@ export default {
   target: 'static',
 
   head: {
-    title: 'blog',
-    htmlAttrs: {
-      lang: 'en',
-    },
+    title: 'プロキオン',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'プロキオンの日常とか開発とか',
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'プロキオン',
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: baseUrl },
+      { hid: 'og:title', property: 'og:title', content: 'プロキオン' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'プロキオンの日常とか開発とか',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `${this.$config.baseURL}/ogp.png`,
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -53,6 +75,9 @@ export default {
       regular: [],
       brands: ['faGithub', 'faTwitter'],
     },
+  },
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'http://locahost:3000',
   },
   build: {},
 }

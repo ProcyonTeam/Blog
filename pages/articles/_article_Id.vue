@@ -88,6 +88,40 @@ export default {
   data: () => ({
     openSideMenu: false,
   }),
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.article.descriptions}...`,
+        },
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        { hid: 'og:title', property: 'og:title', content: this.article.title },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `${this.article.descriptions}...`,
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `${this.$config.baseURL}${this.$router.history.base}${this.$route.path}`,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.$config.baseURL}/images/${this.article.ogpImageName}`,
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+      ],
+    }
+  },
   computed: {
     getData() {
       const date = new Date(this.article.updatedAt)
