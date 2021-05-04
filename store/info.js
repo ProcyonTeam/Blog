@@ -1,9 +1,6 @@
 export const state = () => ({
   siteName: 'プロキオン',
-  naviMenu: [
-    { text: 'Home', to: '/' },
-    { text: 'Blog', to: '/articles' },
-  ],
+  naviMenu: [{ text: 'Blog', to: '/articles' }],
   home: {
     title: '僕らは抵抗するで<span class="text-indigo-600">技術で</span>',
     text: `好きなもの作り続ければ自ずと道が見える...

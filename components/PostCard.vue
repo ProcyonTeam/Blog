@@ -11,7 +11,9 @@
         <div class="m-2">
           <fa icon="history" class="mr-2" />{{ getData(article.updatedAt) }}
         </div>
-        <div class="text-2xl font-semibold p-2">{{ article.title }}</div>
+        <div class="text-xl font-semibold p-2">
+          {{ article.title }}
+        </div>
       </div>
     </NuxtLink>
   </div>
